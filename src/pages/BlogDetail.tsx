@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa6";
 import backgroundVideo from "../assets/M4.mp4";
 import Header from "../components/Header";
-import { Helmet } from "react-helmet-async";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -30,7 +30,7 @@ interface Blog {
 }
 
 const API_BASE =
-  import.meta.env.VITE_API_URL || "https://chirpwhirpserver-1.onrender.com/";
+  import.meta.env.VITE_API_URL || "https://chirpwhirpserver-1.onrender.com";
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -64,7 +64,17 @@ const BlogDetail: React.FC = () => {
       try {
         const res = await fetch(`${API_BASE}/api/blogs?limit=6`);
         const data = await res.json();
-        setRecentBlogs(data);
+        console.log("Recent blogs response:", data);
+
+        if (Array.isArray(data)) {
+          setRecentBlogs(data);
+        } else if (Array.isArray(data.blogs)) {
+          setRecentBlogs(data.blogs);
+        } else if (Array.isArray(data.data)) {
+          setRecentBlogs(data.data);
+        } else {
+          setRecentBlogs([]);
+        }
       } catch (err) {
         console.error("Failed to fetch recent blogs:", err);
       }
@@ -230,25 +240,6 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div className="blog-detail">
-      <Helmet>
-        <title>{blog.metaTitle || blog.title}</title>
-        <meta
-          name="description"
-          content={blog.metaDesc || blog.content.slice(0, 150)}
-        />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={blog.metaTitle || blog.title} />
-        <meta
-          property="og:description"
-          content={blog.metaDesc || blog.content.slice(0, 150)}
-        />
-        <meta property="og:image" content={blog.mainImage} />
-        <meta
-          property="og:url"
-          content={`https://thebrightlayer.com/blogs/${blog.slug}`}
-        />
-      </Helmet>
-
       <Header />
       {/* Social share sidebar */}
       <div className="social-sidebar">
@@ -357,7 +348,7 @@ const BlogDetail: React.FC = () => {
             spaceBetween={30}
             slidesPerView={1}
             loop={false}
-            autoplay={{ delay: 2000 }}
+            autoplay={{ delay: 800 }}
             pagination={{ clickable: true }}
             modules={[Pagination, Autoplay]}
           >
