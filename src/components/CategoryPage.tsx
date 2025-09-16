@@ -64,7 +64,7 @@ const CategoryPage: React.FC = () => {
       <h2 style={{ margin: "20px 0" }}>
         Category: {categoryName?.replace("-", " ")}
       </h2>
-      {loading && <p>Loading...</p>}
+      {loading}
       {!loading && cards.length === 0 && <p>No blogs found.</p>}
       <div className="all-category-blogs">
         {cards.map((blog) => (
