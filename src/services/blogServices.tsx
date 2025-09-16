@@ -9,7 +9,7 @@ export interface Blog {
   createdAt: string;
 }
 
-const API_BASE = "https://thebrightlayerbackend.onrender.com/api";
+const API_BASE = "https://chirpwhirpserver-1.onrender.com//api";
 
 // Fetch blogs by category
 export async function getBlogsByCategory(category: string): Promise<Blog[]> {

@@ -25,12 +25,12 @@ interface Blog {
   mainImage?: string;
   createdAt: string;
   slug: string;
-  metaTitle : string;
-  metaDesc : string;
+  metaTitle: string;
+  metaDesc: string;
 }
 
 const API_BASE =
-  import.meta.env.VITE_API_URL || "https://thebrightlayerbackend.onrender.com";
+  import.meta.env.VITE_API_URL || "https://chirpwhirpserver-1.onrender.com/";
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -230,7 +230,7 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div className="blog-detail">
-          <Helmet>
+      <Helmet>
         <title>{blog.metaTitle || blog.title}</title>
         <meta
           name="description"
@@ -314,7 +314,7 @@ const BlogDetail: React.FC = () => {
               } else if (/^[A-Za-z0-9+/=]+$/.test(blog.mainImage)) {
                 imgSrc = `data:image/jpeg;base64,${blog.mainImage}`;
               } else {
-                imgSrc = `https://thebrightlayerbackend.onrender.com/${String(
+                imgSrc = `https://chirpwhirpserver-1.onrender.com//${String(
                   blog.mainImage
                 ).replace(/\\/g, "/")}`;
               }
@@ -371,7 +371,7 @@ const BlogDetail: React.FC = () => {
                 } else if (/^[A-Za-z0-9+/=]+$/.test(item.mainImage || "")) {
                   imgSrc = `data:image/jpeg;base64,${item.mainImage}`;
                 } else {
-                  imgSrc = `https://thebrightlayerbackend.onrender.com/${String(
+                  imgSrc = `https://chirpwhirpserver-1.onrender.com//${String(
                     item.mainImage
                   ).replace(/\\/g, "/")}`;
                 }

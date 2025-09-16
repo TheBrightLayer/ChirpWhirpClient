@@ -306,7 +306,7 @@ const CreateBlog: React.FC = () => {
 
     try {
       const res = await fetch(
-        "https://thebrightlayerbackend.onrender.com/api/blogs/create",
+        "https://chirpwhirpserver-1.onrender.com//api/blogs/create",
         { method: "POST", body: formData }
       );
       if (!res.ok) {

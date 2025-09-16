@@ -117,10 +117,10 @@ const CategoryPage: React.FC = () => {
   //     setLoading(true);
   //     try {
   //       const url = categoryName
-  //         ? `https://thebrightlayerbackend.onrender.com/api/blogs?category=${encodeURIComponent(
+  //         ? `https://chirpwhirpserver-1.onrender.com//api/blogs?category=${encodeURIComponent(
   //             categoryName
   //           )}&page=${page}&limit=5`
-  //         : `https://thebrightlayerbackend.onrender.com/api/blogs?page=${page}&limit=5`;
+  //         : `https://chirpwhirpserver-1.onrender.com//api/blogs?page=${page}&limit=5`;
 
   //       const res = await fetch(url);
   //       const data = await res.json();
@@ -144,35 +144,33 @@ const CategoryPage: React.FC = () => {
   //   fetchBlogs();
   // }, [page, categoryName]);
 
- const [totalPages, setTotalPages] = useState(1);
- useEffect(() => {
-  const fetchBlogs = async () => {
-    setLoading(true);
-    try {
-      const url = categoryName
-        ? `https://thebrightlayerbackend.onrender.com/api/blogs?category=${encodeURIComponent(
-            categoryName
-          )}&page=${page}&limit=15`
-        : `https://thebrightlayerbackend.onrender.com/api/blogs?page=${page}&limit=15`;
+  const [totalPages, setTotalPages] = useState(1);
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      setLoading(true);
+      try {
+        const url = categoryName
+          ? `https://chirpwhirpserver-1.onrender.com//api/blogs?category=${encodeURIComponent(
+              categoryName
+            )}&page=${page}&limit=15`
+          : `https://chirpwhirpserver-1.onrender.com//api/blogs?page=${page}&limit=15`;
 
-      const res = await fetch(url);
-      const data = await res.json();
+        const res = await fetch(url);
+        const data = await res.json();
 
-      const newBlogs = Array.isArray(data) ? data : data?.blogs || [];
-      setBlogs(newBlogs);
-      setTotalPages(data.totalPages || 1); // assuming your backend returns totalPages
-    } catch (e) {
-      console.error("Error fetching blogs:", e);
-    } finally {
-      setLoading(false);
-      setInitialLoading(false);
-    }
-  };
+        const newBlogs = Array.isArray(data) ? data : data?.blogs || [];
+        setBlogs(newBlogs);
+        setTotalPages(data.totalPages || 1); // assuming your backend returns totalPages
+      } catch (e) {
+        console.error("Error fetching blogs:", e);
+      } finally {
+        setLoading(false);
+        setInitialLoading(false);
+      }
+    };
 
-  fetchBlogs();
-}, [page, categoryName]);
-
-
+    fetchBlogs();
+  }, [page, categoryName]);
 
   // Format helpers
   const formatDate = (iso?: string) =>
@@ -207,7 +205,7 @@ const CategoryPage: React.FC = () => {
       } else if (/^[A-Za-z0-9+/=]+$/.test(b.mainImage)) {
         img = `data:image/jpeg;base64,${b.mainImage}`;
       } else {
-        img = `https://thebrightlayerbackend.onrender.com/${String(
+        img = `https://chirpwhirpserver-1.onrender.com//${String(
           b.mainImage
         ).replace(/\\/g, "/")}`;
       }
@@ -231,8 +229,6 @@ const CategoryPage: React.FC = () => {
     return <SplashScreen />;
   }
 
-  
-
   return (
     <div className="category-page">
       <h2 style={{ margin: "20px 0" }}>
@@ -255,13 +251,17 @@ const CategoryPage: React.FC = () => {
         ))}
       </div>
 
-     {loading && <SkeletonLoader type="small" count={3} />}
+      {loading && <SkeletonLoader type="small" count={3} />}
 
-{/* Classic pagination */}
-<Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
+      {/* Classic pagination */}
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        onPageChange={setPage}
+      />
 
-{/* Optional: message if no more blogs */}
-{!hasMore && <p style={{ textAlign: "center" }}>No more blogs</p>}
+      {/* Optional: message if no more blogs */}
+      {!hasMore && <p style={{ textAlign: "center" }}>No more blogs</p>}
     </div>
   );
 };
@@ -354,7 +354,7 @@ const Blogs: React.FC = () => {
 
     try {
       const res = await fetch(
-        `https://thebrightlayerbackend.onrender.com/api/blogs/${slug}`,
+        `https://chirpwhirpserver-1.onrender.com//api/blogs/${slug}`,
         {
           method: "DELETE",
           headers: {
@@ -383,7 +383,7 @@ const Blogs: React.FC = () => {
     (async () => {
       try {
         const res = await fetch(
-          "https://thebrightlayerbackend.onrender.com/api/blogs?limit=15"
+          "https://chirpwhirpserver-1.onrender.com//api/blogs?limit=15"
         );
         const data = await res.json();
         console.log(res);
@@ -443,7 +443,7 @@ const Blogs: React.FC = () => {
       } else if (/^[A-Za-z0-9+/=]+$/.test(b.mainImage)) {
         img = `data:image/jpeg;base64,${b.mainImage}`;
       } else {
-        img = `https://thebrightlayerbackend.onrender.com/${String(
+        img = `https://chirpwhirpserver-1.onrender.com//${String(
           b.mainImage
         ).replace(/\\/g, "/")}`;
       }
@@ -469,7 +469,6 @@ const Blogs: React.FC = () => {
   };
 
   // ---------------- Scroll effect ----------------
-
 
   // ---------------- Group blogs per category ----------------
   const blogsByCategory = mainCategories.reduce((acc, cat) => {

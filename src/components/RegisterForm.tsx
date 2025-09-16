@@ -32,11 +32,14 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
     setLoading(true);
 
     try {
-      const res = await axios.post("https://thebrightlayerbackend.onrender.com/api/auth/register", {
-        username,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://chirpwhirpserver-1.onrender.com//api/auth/register",
+        {
+          username,
+          email,
+          password,
+        }
+      );
 
       setSuccess(res.data.msg);
       if (onRegisterSuccess) onRegisterSuccess();

@@ -17,53 +17,65 @@ export default function SettingsPage({ onClose }: { onClose: () => void }) {
     const formData = new FormData();
     formData.append("profilePicture", profilePic);
 
-    const res = await fetch("https://thebrightlayerbackend.onrender.com/api/profile-picture", {
-      method: "PUT",
-      headers: { Authorization: `Bearer ${token}` },
-      body: formData,
-    });
+    const res = await fetch(
+      "https://chirpwhirpserver-1.onrender.com//api/profile-picture",
+      {
+        method: "PUT",
+        headers: { Authorization: `Bearer ${token}` },
+        body: formData,
+      }
+    );
     const data = await res.json();
     alert(data.message || "Profile picture updated!");
   };
 
   const handleChangePassword = async () => {
     if (!password) return alert("Please enter a new password!");
-    const res = await fetch("https://thebrightlayerbackend.onrender.com/api/change-password", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ newPassword: password }),
-    });
+    const res = await fetch(
+      "https://chirpwhirpserver-1.onrender.com//api/change-password",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ newPassword: password }),
+      }
+    );
     const data = await res.json();
     alert(data.message || "Password updated!");
   };
 
   const handleUpdateEmail = async () => {
     if (!email) return alert("Please enter a new email!");
-    const res = await fetch("https://thebrightlayerbackend.onrender.com/api/update-email", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ email }),
-    });
+    const res = await fetch(
+      "https://chirpwhirpserver-1.onrender.com//api/update-email",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
     const data = await res.json();
     alert(data.message || "Email updated!");
   };
 
   const handleUpdateName = async () => {
     if (!name) return alert("Please enter your name!");
-    const res = await fetch("https://thebrightlayerbackend.onrender.com/api/update-name", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ name }),
-    });
+    const res = await fetch(
+      "https://chirpwhirpserver-1.onrender.com//api/update-name",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ name }),
+      }
+    );
     const data = await res.json();
     alert(data.message || "Name updated!");
   };

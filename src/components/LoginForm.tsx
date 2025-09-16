@@ -15,9 +15,12 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
   const navigate = useNavigate();
 
   const fetchUserRole = async (token: string) => {
-    const res = await fetch(`https://thebrightlayerbackend.onrender.com/api/auth/me/role`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const res = await fetch(
+      `https://chirpwhirpserver-1.onrender.com//api/auth/me/role`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     return await res.json();
   };
 
@@ -25,11 +28,14 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
     e.preventDefault();
     setError("");
     try {
-      const res = await fetch("https://thebrightlayerbackend.onrender.com/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://chirpwhirpserver-1.onrender.com//api/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await res.json();
       if (!res.ok) return setError(data?.msg || "Login failed");
 
@@ -55,11 +61,14 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
     e.preventDefault();
     setError("");
     try {
-      const res = await fetch("https://thebrightlayerbackend.onrender.com/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://chirpwhirpserver-1.onrender.com//api/auth/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await res.json();
       if (!res.ok) return setError(data?.msg || "Registration failed");
 
@@ -95,7 +104,7 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
           : { identityToken: token, name: extra?.name, email: extra?.email };
 
       const res = await fetch(
-        `https://thebrightlayerbackend.onrender.com/api/auth/login/${provider}`,
+        `https://chirpwhirpserver-1.onrender.com//api/auth/login/${provider}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

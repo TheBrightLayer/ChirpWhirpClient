@@ -27,7 +27,10 @@ const resolveImageSrc = (img?: string): string => {
   } else if (/^[A-Za-z0-9+/=]+$/.test(img)) {
     return `data:image/jpeg;base64,${img}`;
   } else {
-    return `https://thebrightlayerbackend.onrender.com/${String(img).replace(/\\/g, "/")}`;
+    return `https://chirpwhirpserver-1.onrender.com//${String(img).replace(
+      /\\/g,
+      "/"
+    )}`;
   }
 };
 
