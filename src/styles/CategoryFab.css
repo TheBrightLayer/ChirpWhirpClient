@@ -1,0 +1,107 @@
+/* Container */
+.gmail-fab-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Actions container */
+.gmail-fab-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.gmail-fab-actions.open {
+  max-height: 400px; /* enough to show all actions */
+}
+
+/* Each category button */
+.gmail-fab-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 0 16px;
+  height: 40px;
+
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  margin-bottom: 8px;
+}
+
+.gmail-fab-actions.open .gmail-fab-action {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Stagger effect */
+.gmail-fab-actions.open .gmail-fab-action:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.gmail-fab-actions.open .gmail-fab-action:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.gmail-fab-actions.open .gmail-fab-action:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.gmail-fab-actions.open .gmail-fab-action:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.gmail-fab-actions.open .gmail-fab-action:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+/* Label */
+.gmail-fab-action-label {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Main FAB */
+.gmail-fab-main {
+  background: #333;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* width: 56px;
+  height: 56px;
+  border-radius: 50%; */
+  /* background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+   */
+}
+
+.gmail-fab-main:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.gmail-fab-main.open svg {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}

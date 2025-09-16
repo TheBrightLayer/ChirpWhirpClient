@@ -1,0 +1,196 @@
+/* Load Inter font for modern AI-company look */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap'); */
+
+/* Global font */
+body {
+  /* font-family: 'Inter', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* optional for dark background */
+}
+
+/* Full-bleed hero with video background */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;           /* fill the screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background video sits at the very back (no negative z-index) */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;        /* keep clicks on your buttons working */
+}
+
+/* Dark overlay + animated gradient for depth */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45));
+  
+  
+ 
+}
+
+.hero-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,193,7,0.15), rgba(255,193,7,0));
+  animation: gradientShift 8s infinite alternate ease-in-out;
+  mix-blend-mode: overlay;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+  padding: 60px 20px;
+  animation: fadeUp 1.5s ease forwards;
+  opacity: 0;
+}
+
+/* Heading styles */
+.hero-heading h1 {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #fff;
+}
+
+.highlight-red {
+  color: #FFC107; /* Brand highlight */
+  position: relative;
+}
+
+.highlight-red::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #FFC107;
+  border-radius: 2px;
+  animation: underlineGrow 1.5s ease forwards;
+}
+
+/* Right description */
+.hero-description {
+  max-width: 500px;
+}
+
+.hero-description p {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #e6e6e6;
+}
+
+/* Button */
+.black-btn {
+  background: #FFC107;
+  color: #000;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(255,193,7,0.6);
+  transition: all 0.3s ease;
+}
+
+.black-btn:hover {
+  background: #ffda47;
+  box-shadow: 0 0 30px rgba(255,193,7,0.9);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.hero-logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  z-index: 5;
+}
+
+.hero-logo img {
+  margin-top: -10px;
+  height: 140px;
+  width: 162px;
+  scale: 1.4;
+}
+
+/* Link inside button */
+.getting-started-btn {
+  color: black;
+  text-decoration: none;
+}
+
+.getting-started-btn:visited {
+  color: black;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+@keyframes underlineGrow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-heading h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-description p {
+    font-size: 18px;
+  }
+
+  .black-btn {
+    font-size: 16px;
+    padding: 12px 26px;
+  }
+}

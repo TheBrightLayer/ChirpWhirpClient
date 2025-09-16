@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+.animated-news {
+    font-family: 'Arizonia', cursive;
+    font-size: 59px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 40px auto;
+    letter-spacing: 4px;
+    display: flex
+;
+    justify-content: center;
+    position: absolute;
+    left: 195px;
+    top: -2px;
+    height: 1px;
+
+}
+
+.letter {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.5s forwards ease-out;
+}
+
+.letter-0 { animation-delay: 0.1s; }
+.letter-1 { animation-delay: 0.4s; }
+.letter-2 { animation-delay: 0.7s; }
+.letter-3 { animation-delay: 1s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

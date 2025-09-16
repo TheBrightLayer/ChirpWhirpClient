@@ -1,0 +1,321 @@
+/* ===== Blog Page Wrapper ===== */
+.create-blog-page {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 60px 8%;
+  padding-top: 22vh;
+  min-height: 100vh;
+}
+
+/* ===== Blog Card ===== */
+.create-blog-card {
+  background: #111;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.6s ease forwards;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== Title ===== */
+.create-blog-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.create-blog-title span {
+  color: #e53945;
+}
+
+/* ===== Form Styling ===== */
+.create-blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Form Groups ===== */
+.create-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* ===== Inputs & Selects ===== */
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #444;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+select {
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+option {
+  background-color: #111;
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-bottom: 2px solid #e53945;
+  transform: translateY(-1px);
+}
+
+/* ===== Tags ===== */
+.create-tags-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.create-add-tag-btn {
+  background-color: #e53945;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.create-add-tag-btn:hover {
+  background-color: #c32e3a;
+}
+
+.create-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.create-chip {
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.create-chip:hover {
+  background-color: #e53945;
+  color: white;
+}
+
+/* ===== Cover Preview ===== */
+.create-cover-preview {
+  margin-top: 15px;
+}
+
+.create-cover-preview img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ===== Editor Toolbar ===== */
+.create-editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.create-toolbar-btn {
+  background: none;
+  border: 1px solid #444;
+  color: white;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.create-toolbar-btn:hover {
+  background-color: #333;
+}
+
+.create-toolbar-btn.is-active {
+  border-color: #e53945;
+  color: #e53945;
+}
+
+/* Toolbar Separator */
+.create-toolbar-sep {
+  width: 1px;
+  background: #444;
+  height: 22px;
+  align-self: center;
+}
+
+/* ===== Editor Box ===== */
+.create-editor-box {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 200px;
+}
+
+.create-editable {
+  min-height: 200px;
+  outline: none;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+/* Inline code style */
+.inline-code {
+  background: #222;
+  padding: 2px 6px;
+  font-family: monospace;
+  color: #e53945;
+  border-radius: 4px;
+}
+
+/* Images in editor */
+.create-editor-image-wrap {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.create-editor-image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ===== Submit Button ===== */
+.create-form-submit {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.create-form-submit button {
+  background-color: #e53945;
+  color: white;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.create-form-submit button:hover {
+  background-color: #c32e3a;
+  transform: translateY(-2px);
+}
+
+/* ===== Fade Animation ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .create-blog-title {
+    font-size: 2rem;
+  }
+
+  .create-blog-card {
+    padding: 20px;
+  }
+
+  .create-editor-toolbar {
+    flex-direction: column;
+  }
+
+  .create-tags-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .create-form-submit {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-blog-title {
+    font-size: 1.7rem;
+  }
+
+  .create-toolbar-btn {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .create-editor-box {
+    padding: 12px;
+  }
+
+  .create-form-submit button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .create-tags-row {
+    gap: 6px;
+  }
+
+  .create-chip {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .create-editor-toolbar {
+    flex-direction: row;
+  }
+}

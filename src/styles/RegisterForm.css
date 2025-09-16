@@ -1,0 +1,143 @@
+.register-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.register-modal {
+  background: #121212;
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+  width: 400px;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+  color: #f5f5f5;
+  animation: fadeInScale 0.3s ease forwards;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@keyframes fadeInScale {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #1a4eff;
+}
+
+.register-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.register-form label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1b1b1b;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #1a4eff;
+  background: #222;
+}
+
+.register-form button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #1a4eff; /* dark-blue accent */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.register-form button:hover {
+  background: #0033cc; /* slightly darker blue on hover */
+}
+
+.error {
+  color: #ff4d4f; /* keep error red for messages */
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.success {
+  color: #16a34a;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.switch-form {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.switch-link {
+  color: #1a4eff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.switch-link:hover {
+  color: #0033cc;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .register-modal {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .close-btn {
+    font-size: 20px;
+    top: 10px;
+    right: 12px;
+  }
+}

@@ -1,0 +1,181 @@
+/* ===== Modal Overlay ===== */
+.profile-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.85) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 9999 !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* ===== Modal Content ===== */
+.profile-modal-content {
+  background: #0d0d0d !important;
+  padding: 3rem 2.5rem !important;
+  border-radius: 24px !important;
+  width: 420px !important;
+  max-width: 95% !important;
+  text-align: center !important;
+  color: #fff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7) !important;
+  animation: fadeInUp 0.6s ease forwards !important;
+}
+
+/* ===== Modal Title ===== */
+.profile-modal-content h2 {
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+  color: #1a4eff !important; /* changed accent to blue */
+  letter-spacing: 1px !important;
+}
+
+/* ===== Profile Photo Section ===== */
+.profile-photo-section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin-bottom: 1rem !important;
+}
+
+.profile-photo {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  margin-bottom: 12px !important;
+  border: 3px solid #1a4eff !important; /* accent border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.profile-photo:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 18px rgba(26, 78, 255, 0.6) !important;
+}
+
+/* ===== Inputs ===== */
+.profile-input {
+  padding: 14px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 14px !important;
+  border: 1px solid #333 !important;
+  background: #111 !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+  outline: none !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.profile-input:focus {
+  border: 2px solid #1a4eff !important;
+  background: #1a1a1a !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 12px rgba(26, 78, 255, 0.5) !important;
+}
+
+/* ===== Coming Soon Text ===== */
+.coming-soon {
+  color: #888 !important;
+  font-size: 0.85rem !important;
+}
+
+/* ===== Profile Actions ===== */
+.profile-actions {
+  display: flex !important;
+  flex-direction: column !important; 
+  gap: 12px !important;
+  margin-top: 25px !important;
+  align-items: stretch;
+}
+
+/* ===== Save & Logout buttons ===== */
+.save-btn,
+.logout-btn {
+  width: 100% !important;
+}
+
+/* ===== Close button styling ===== */
+.close-btn {
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+/* ===== Save Button ===== */
+.save-btn {
+    background-color: #e53945  !important;
+  color: white  !important;
+}
+
+.save-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(26, 78, 255, 0.7) !important;
+}
+
+/* ===== Logout Button ===== */
+.logout-btn {
+   background-color: #e53945  !important;
+  color: white  !important;
+}
+
+.logout-btn:hover {
+   background-color: #c32e3a  !important;
+  transform: translateY(-2px)  !important;
+}
+
+/* ===== Close Button Hover ===== */
+.close-btn:hover {
+ background-color: #c32e3a  !important;
+  transform: translateY(-2px)  !important;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .profile-modal-content {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .profile-actions {
+    flex-direction: column !important;
+  }
+}
+
+/* ===== Custom File Upload Button ===== */
+.profile-photo-section input[type="file"] {
+  display: none;
+}
+
+.custom-file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1a4eff, #3f7bff);
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.custom-file-label:hover {
+  background: linear-gradient(135deg, #0033cc, #1a4eff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+}

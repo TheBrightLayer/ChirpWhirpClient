@@ -1,0 +1,144 @@
+.industries-section {
+    background: black;
+    padding: 80px 10%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .industries-header {
+    text-align: start;
+    color: #333;
+  
+  }
+  
+  .industries-header h2 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .industries-header h2 span {
+    color: #ffdd33;
+  }
+  
+  .industries-header p {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .industries-header a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .industries-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+/* Horizontal scroll container */
+.industry-card-list {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.industry-card-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.industry-card-list::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+/* Card styles */
+.hover-card {
+  flex: 0 0 80%; /* mobile default: 1 card per view */
+  background: #17141d;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.6);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+}
+
+.first-card {
+  z-index: auto;
+}
+
+.hover-card:not(.first-card):focus-within ~ .hover-card,
+.hover-card:not(.first-card):hover ~ .hover-card {
+  transform: none;
+}
+
+.industry-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.industry-content {
+  padding: 20px;
+  color: white;
+}
+
+.industry-content h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.industry-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.industry-content li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.industry-content li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ffdd33;
+  font-weight: bold;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 600px) {
+  .hover-card {
+    flex: 0 0 calc(50% - 1rem); /* 2 cards per row */
+  }
+  .industries-header h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .hover-card {
+    flex: 0 0 calc(33.333% - 1rem); /* 3 cards per row */
+  }
+}
+
+@media (min-width: 1200px) {
+  .hover-card {
+    flex: 0 0 calc(25% - 1.125rem); /* 4 cards per row */
+  }
+  .industries-header h2 {
+    font-size: 4rem;
+  }
+}

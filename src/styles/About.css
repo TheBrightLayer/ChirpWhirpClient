@@ -1,0 +1,182 @@
+/* General Page Layout */
+.about-page {
+  max-width: 1000px;
+  margin-top: 25px;
+  padding: 60px 20px;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+ 
+ 
+
+}
+.about-page {
+  position: relative;
+  z-index: 1;
+  /* so content doesn’t overlap with video bottom */
+ /* // color: white; or adjust based on contrast */
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+ 
+}
+
+.about-hero .intro {
+  font-size: 24px;
+  max-width: 750px;
+  margin: 0 auto;
+  color: #999;
+  text-align: left;
+  padding: 25px;
+}
+
+/* Section Headings */
+.about-page h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+ color: #999;
+  text-align: center;
+}
+
+/* Core Values */
+.core-values {
+  margin: 80px 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.value-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.value-item .icon {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.value-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  
+}
+
+.value-item p {
+  font-size: 1rem;
+  text-align: left;
+ color: #999;
+
+}
+
+/* Mission Section */
+.mission-section {
+  margin: 80px 0;
+ 
+  text-align: center;
+}
+
+.mission-section p {
+  font-size: 1.15rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 25px;
+   color: #999;
+
+}
+
+/* Team Section */
+.team-section {
+  margin: 80px 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member .profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #eee;
+}
+
+.team-member h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.team-member .role {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* CTA Section */
+.cta-section {
+  margin: 100px 0 60px;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #999;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #d8232a;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #b91c22;
+}
+
+
+/* Ensure content stays readable */
+

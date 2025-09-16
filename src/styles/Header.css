@@ -1,0 +1,249 @@
+.navbar {
+  position: fixed;      /* stays on top even when scrolling */
+  top: 0;
+  left: 0;
+  width: 85%;
+  z-index: 1000;        /* higher than carousel */
+  background: transparent; /* see-through */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+/* ✅ Navbar on scroll */
+.navbar.scrolled {
+  background: inherit;   /* was white */
+  /* color: #fff;         keep text/icons white */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ✅ Plus Icon Button */
+.icon-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: inherit;   /* will follow white/black depending on navbar */
+  cursor: pointer;
+  transition: font-size 0.3s ease, transform 0.3s ease;
+}
+
+/* ✅ Bigger + on scroll */
+.navbar.scrolled .icon-btn {
+  font-size: 2.8rem;  /* bigger size */
+  transform: scale(1.2);
+}
+
+
+/* ✅ Logo (SVG) */
+.logo {
+  margin-top: 10px;
+  width: 25vw;
+  display: flex;
+  align-items: center;
+}
+.navbar.scrolled {
+  
+  background: inherit;
+  /* color: #000; */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  scale:3;
+  height: 40px;   /* adjust for navbar size */
+  width: 100%;    /* keeps aspect ratio */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.icon-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.modal-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.modal-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Close Button Top Right */
+.modal-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Centered Links */
+.modal-links {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.modal-links a  {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-links a:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+/* Make Login button like modal links */
+.modal-link.login-btn {
+  font-size: 3rem;       /* same as modal-links a */
+  font-weight: 700;
+  color: white;
+  background: none;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 1.5rem;    /* similar spacing */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: fadeIn 0.6s ease forwards; /* same fade-in */
+}
+
+.modal-link.login-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.modal-link.login-btn {
+  animation-delay: 0.6s; /* last link is 0.5s */
+}
+/* Footer */
+.modal-footer {
+  position: absolute;
+  bottom: 2rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left p, .footer-right p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.social-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+  opacity: 0.7;
+}
+
+/* Fade-in Animation for Links */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-links a {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.modal-links a:nth-child(1) { animation-delay: 0.1s; }
+.modal-links a:nth-child(2) { animation-delay: 0.2s; }
+.modal-links a:nth-child(3) { animation-delay: 0.3s; }
+.modal-links a:nth-child(4) { animation-delay: 0.4s; }
+.modal-links a:nth-child(5) { animation-delay: 0.5s; }
+
+/* Categories Toggle inside Modal */
+.categories-toggle {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.categories-btn {
+  background: none;
+  border: none;
+  font-size: 3rem; /* match modal-links size */
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.categories-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.categories-dropdown {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.categories-dropdown .dropdown-link {
+  font-size: 2.2rem; /* slightly smaller than main links */
+  font-weight: 500;
+  color: #ddd;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-align: center;
+}
+
+.categories-dropdown .dropdown-link:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  color: #fff;
+}
