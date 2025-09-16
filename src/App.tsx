@@ -47,7 +47,7 @@ function AppContent() {
 
       <Routes>
         {/* Blog and category routes */}
-        <Route path="/" element={<Blogs />} />
+        <Route path="*" element={<Blogs />} />
         <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/category/:categoryName" element={<CategoryPage />} />
 
