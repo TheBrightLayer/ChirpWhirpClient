@@ -314,7 +314,7 @@ const BlogDetail: React.FC = () => {
               } else if (/^[A-Za-z0-9+/=]+$/.test(blog.mainImage)) {
                 imgSrc = `data:image/jpeg;base64,${blog.mainImage}`;
               } else {
-                imgSrc = `https://chirpwhirpserver-1.onrender.com//${String(
+                imgSrc = `https://chirpwhirpserver-1.onrender.com/${String(
                   blog.mainImage
                 ).replace(/\\/g, "/")}`;
               }
@@ -371,7 +371,7 @@ const BlogDetail: React.FC = () => {
                 } else if (/^[A-Za-z0-9+/=]+$/.test(item.mainImage || "")) {
                   imgSrc = `data:image/jpeg;base64,${item.mainImage}`;
                 } else {
-                  imgSrc = `https://chirpwhirpserver-1.onrender.com//${String(
+                  imgSrc = `https://chirpwhirpserver-1.onrender.com/${String(
                     item.mainImage
                   ).replace(/\\/g, "/")}`;
                 }

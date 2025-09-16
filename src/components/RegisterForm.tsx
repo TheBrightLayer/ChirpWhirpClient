@@ -33,7 +33,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
 
     try {
       const res = await axios.post(
-        "https://chirpwhirpserver-1.onrender.com//api/auth/register",
+        "https://chirpwhirpserver-1.onrender.com/api/auth/register",
         {
           username,
           email,

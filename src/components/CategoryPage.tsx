@@ -12,7 +12,7 @@ const CategoryPage: React.FC = () => {
     if (categoryName) {
       setLoading(true);
       fetch(
-        `https://chirpwhirpserver-1.onrender.com//api/blogs?category=${encodeURIComponent(
+        `https://chirpwhirpserver-1.onrender.com/api/blogs?category=${encodeURIComponent(
           categoryName
         )}`
       )
@@ -42,7 +42,7 @@ const CategoryPage: React.FC = () => {
       } else if (/^[A-Za-z0-9+/=]+$/.test(b.mainImage)) {
         img = `data:image/jpeg;base64,${b.mainImage}`;
       } else {
-        img = `https://chirpwhirpserver-1.onrender.com//${String(
+        img = `https://chirpwhirpserver-1.onrender.com/${String(
           b.mainImage
         ).replace(/\\/g, "/")}`;
       }

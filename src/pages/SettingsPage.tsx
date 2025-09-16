@@ -18,7 +18,7 @@ export default function SettingsPage({ onClose }: { onClose: () => void }) {
     formData.append("profilePicture", profilePic);
 
     const res = await fetch(
-      "https://chirpwhirpserver-1.onrender.com//api/profile-picture",
+      "https://chirpwhirpserver-1.onrender.com/api/profile-picture",
       {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
@@ -32,7 +32,7 @@ export default function SettingsPage({ onClose }: { onClose: () => void }) {
   const handleChangePassword = async () => {
     if (!password) return alert("Please enter a new password!");
     const res = await fetch(
-      "https://chirpwhirpserver-1.onrender.com//api/change-password",
+      "https://chirpwhirpserver-1.onrender.com/api/change-password",
       {
         method: "PUT",
         headers: {
@@ -49,7 +49,7 @@ export default function SettingsPage({ onClose }: { onClose: () => void }) {
   const handleUpdateEmail = async () => {
     if (!email) return alert("Please enter a new email!");
     const res = await fetch(
-      "https://chirpwhirpserver-1.onrender.com//api/update-email",
+      "https://chirpwhirpserver-1.onrender.com/api/update-email",
       {
         method: "PUT",
         headers: {
@@ -66,7 +66,7 @@ export default function SettingsPage({ onClose }: { onClose: () => void }) {
   const handleUpdateName = async () => {
     if (!name) return alert("Please enter your name!");
     const res = await fetch(
-      "https://chirpwhirpserver-1.onrender.com//api/update-name",
+      "https://chirpwhirpserver-1.onrender.com/api/update-name",
       {
         method: "PUT",
         headers: {

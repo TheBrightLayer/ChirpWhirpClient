@@ -13,7 +13,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose, onLoginSuccess }) => {
     try {
       // Replace with your API login logic
       const res = await fetch(
-        "https://chirpwhirpserver-1.onrender.com//api/login",
+        "https://chirpwhirpserver-1.onrender.com/api/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

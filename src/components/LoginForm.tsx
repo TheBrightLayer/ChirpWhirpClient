@@ -16,7 +16,7 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
 
   const fetchUserRole = async (token: string) => {
     const res = await fetch(
-      `https://chirpwhirpserver-1.onrender.com//api/auth/me/role`,
+      `https://chirpwhirpserver-1.onrender.com/api/auth/me/role`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -29,7 +29,7 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
     setError("");
     try {
       const res = await fetch(
-        "https://chirpwhirpserver-1.onrender.com//api/auth/login",
+        "https://chirpwhirpserver-1.onrender.com/api/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -62,7 +62,7 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
     setError("");
     try {
       const res = await fetch(
-        "https://chirpwhirpserver-1.onrender.com//api/auth/register",
+        "https://chirpwhirpserver-1.onrender.com/api/auth/register",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -104,7 +104,7 @@ export default function LoginForm({ onClose, onLoginSuccess }: LoginFormProps) {
           : { identityToken: token, name: extra?.name, email: extra?.email };
 
       const res = await fetch(
-        `https://chirpwhirpserver-1.onrender.com//api/auth/login/${provider}`,
+        `https://chirpwhirpserver-1.onrender.com/api/auth/login/${provider}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

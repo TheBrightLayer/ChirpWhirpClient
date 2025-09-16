@@ -117,10 +117,10 @@ const CategoryPage: React.FC = () => {
   //     setLoading(true);
   //     try {
   //       const url = categoryName
-  //         ? `https://chirpwhirpserver-1.onrender.com//api/blogs?category=${encodeURIComponent(
+  //         ? `https://chirpwhirpserver-1.onrender.com/api/blogs?category=${encodeURIComponent(
   //             categoryName
   //           )}&page=${page}&limit=5`
-  //         : `https://chirpwhirpserver-1.onrender.com//api/blogs?page=${page}&limit=5`;
+  //         : `https://chirpwhirpserver-1.onrender.com/api/blogs?page=${page}&limit=5`;
 
   //       const res = await fetch(url);
   //       const data = await res.json();
@@ -150,10 +150,10 @@ const CategoryPage: React.FC = () => {
       setLoading(true);
       try {
         const url = categoryName
-          ? `https://chirpwhirpserver-1.onrender.com//api/blogs?category=${encodeURIComponent(
+          ? `https://chirpwhirpserver-1.onrender.com/api/blogs?category=${encodeURIComponent(
               categoryName
             )}&page=${page}&limit=15`
-          : `https://chirpwhirpserver-1.onrender.com//api/blogs?page=${page}&limit=15`;
+          : `https://chirpwhirpserver-1.onrender.com/api/blogs?page=${page}&limit=15`;
 
         const res = await fetch(url);
         const data = await res.json();
@@ -205,7 +205,7 @@ const CategoryPage: React.FC = () => {
       } else if (/^[A-Za-z0-9+/=]+$/.test(b.mainImage)) {
         img = `data:image/jpeg;base64,${b.mainImage}`;
       } else {
-        img = `https://chirpwhirpserver-1.onrender.com//${String(
+        img = `https://chirpwhirpserver-1.onrender.com/${String(
           b.mainImage
         ).replace(/\\/g, "/")}`;
       }
@@ -354,7 +354,7 @@ const Blogs: React.FC = () => {
 
     try {
       const res = await fetch(
-        `https://chirpwhirpserver-1.onrender.com//api/blogs/${slug}`,
+        `https://chirpwhirpserver-1.onrender.com/api/blogs/${slug}`,
         {
           method: "DELETE",
           headers: {
@@ -383,7 +383,7 @@ const Blogs: React.FC = () => {
     (async () => {
       try {
         const res = await fetch(
-          "https://chirpwhirpserver-1.onrender.com//api/blogs?limit=15"
+          "https://chirpwhirpserver-1.onrender.com/api/blogs?limit=15"
         );
         const data = await res.json();
         console.log(res);
@@ -443,7 +443,7 @@ const Blogs: React.FC = () => {
       } else if (/^[A-Za-z0-9+/=]+$/.test(b.mainImage)) {
         img = `data:image/jpeg;base64,${b.mainImage}`;
       } else {
-        img = `https://chirpwhirpserver-1.onrender.com//${String(
+        img = `https://chirpwhirpserver-1.onrender.com/${String(
           b.mainImage
         ).replace(/\\/g, "/")}`;
       }
