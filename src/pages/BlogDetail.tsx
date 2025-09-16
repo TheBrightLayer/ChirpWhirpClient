@@ -30,7 +30,7 @@ interface Blog {
 }
 
 const API_BASE =
-  import.meta.env.VITE_API_URL || "https://chirpwhirpserver-1.onrender.com/";
+  import.meta.env.VITE_API_URL || "https://chirpwhirpserver-1.onrender.com";
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
