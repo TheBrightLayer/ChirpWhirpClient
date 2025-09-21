@@ -216,7 +216,7 @@ const CategoryPage: React.FC = () => {
       title: b?.title || "Untitled",
       image: img,
       category: b?.category || "General",
-      author: b?.author || "Team BrightLayer",
+      author: b?.author || "Team ChirpWhirp",
       date: formatDate(b?.createdAt || b?.updatedAt),
       excerpt: contentToExcerpt(b?.content),
     };
@@ -454,7 +454,7 @@ const Blogs: React.FC = () => {
       title: b?.title || "Untitled",
       image: img,
       category: b?.category || "General",
-      author: b?.author || "Team BrightLayer",
+      author: b?.author || "Team ChirpWhirp",
       date: formatDate(b?.createdAt || b?.updatedAt),
       excerpt: contentToExcerpt(b?.content),
     };
@@ -511,19 +511,19 @@ const Blogs: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>BrightLayer Blogs - Latest News & Insights</title>
+        <title>ChirpWhirp - Latest News & Insights</title>
         <meta
           name="description"
-          content="Explore BrightLayer blogs across Technology, Sports, Politics, Entertainment, and more. Stay informed with insights and the latest stories."
+          content="Explore ChirpWhirp across Technology, Sports, Politics, Entertainment, and more. Stay informed with insights and the latest stories."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="BrightLayer Blogs" />
+        <meta property="og:title" content="ChirpWhirp" />
         <meta
           property="og:description"
-          content="BrightLayer brings you blogs across Technology, Politics, Sports, Lifestyle, and more."
+          content="ChirpWhirp brings you blogs across Technology, Politics, Sports, Lifestyle, and more."
         />
         <meta property="og:image" content={blogImage} />
-        <meta property="og:url" content="https://thebrightlayer.com/blogs" />
+        <meta property="og:url" content="https://ChirpWhirp.com" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
